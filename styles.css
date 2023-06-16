@@ -26,6 +26,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  position: relative;
 }
 
 .fv {
@@ -48,13 +49,25 @@ body {
   margin-bottom: 15px;
 }
 
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.contact-info__block--center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 @media screen and (max-width: 576px) {
   .main-info,
-  .contact_info_container {
+  .contact-info__container {
     flex-direction: column;
   }
 
-  .contact_info_container {
+  .contact-info__container {
     align-items: center;
   }
 
@@ -64,6 +77,13 @@ body {
 
   .experiences {
     margin-right: 0;
+  }
+
+  .contact-info__block--center {
+    position: relative;
+    left: 0;
+    transform: none;
+    justify-content: center;
   }
 }
 
@@ -88,10 +108,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.contact-info__block--center {
-  justify-content: center;
 }
 
 .contact-info__item {
@@ -151,7 +167,7 @@ body {
   fill: var(--text-decoration-color);
 }
 
-.intro_text {
+.intro__text {
   color: var(--secondary-text-color);
   text-align: justify;
 }
@@ -216,6 +232,15 @@ body {
   padding-left: 20px;
 }
 
+.experiences__company-link {
+  color: var(--text-decoration-color);
+  text-decoration: none;
+}
+
+.experiences__company-link:hover {
+  color: var(--secondary-text-color);
+}
+
 .additional-info {
   flex: 1 1 40%;
 }
@@ -240,11 +265,11 @@ body {
 .additional-info__education-university-speciality {
   color: var(--primary-text-color);
   text-align: left;
-  margin-bottom: 10px;
 }
 
 .additional-info__education-university-name {
   color: var(--secondary-text-color);
+  margin-bottom: 10px;
 }
 
 .additional-info__languages {
